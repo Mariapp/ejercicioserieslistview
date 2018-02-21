@@ -184,11 +184,13 @@
         android:id="@+id/btnborrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Borrar" />
+        android:text="Borrar"
+        android:onClick="borrar"/>
 
     <Button
         android:id="@+id/btguardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar serie" />
+        android:text="Guardar serie"
+        android:onClick="btnconfirmarreserva"/>
 </LinearLayout>

@@ -50,21 +50,41 @@ public class registroserieactivity extends AppCompatActivity {
 
 
 
-        if (nombre.equals("") || temporada.equals("") || capitulos.equals("") || año.equals("")|| id==-1) {
-            Toast.makeText(getApplicationContext(), "Rellena todos los campos", Toast.LENGTH_LONG).show();
+        if (nombre.equals("") || temporada.equals("") || capitulos.equals("") || año.equals("")) {
+            //|| id==-1
+            Toast.makeText(getApplicationContext(),
+                    "Por favor, rellena todos los campos", Toast.LENGTH_LONG).show();
+
+
         }else{
-
-
-        }
-
 
             Serie r = new Serie(nombre,temporada,capitulos,año,id+"",resumen);
 
+            Intent i=new Intent(getApplicationContext(),listaseriesactivity.class);
+            i.putExtra(EXTRA_SERIES, r);
+            startActivity(i);
 
 
-                    Intent i=new Intent(getApplicationContext(),listaseriesactivity.class);
-                    i.putExtra(EXTRA_SERIES, r);
-                    startActivity(i);
+
+
         }
+
+
+
+        }
+
+        public void borrar (View view){
+
+
+            etnombre.setText("");
+            ettemporada.setText("");
+            etcapitulos.setText("");
+            etanio.setText("");
+            etresumen.setText("");
+            radiogenero.setSelected(false);
+
+
+
+    }
 
 }
