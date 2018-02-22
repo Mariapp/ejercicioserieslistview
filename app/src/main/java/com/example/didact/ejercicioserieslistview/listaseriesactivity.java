@@ -1,13 +1,22 @@
 package com.example.didact.ejercicioserieslistview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class listaseriesactivity extends AppCompatActivity {
+
+    static final String EXTRA_SERIES = "Series";
+
+
+
     ListView Lvseries;
     ArrayList<Serie> Lista_serie = new ArrayList<Serie>();
     TextView tvnombre, tvtemporadas,resumen, tvaño, tvcapitulos;
@@ -55,6 +64,19 @@ public class listaseriesactivity extends AppCompatActivity {
         Adaptadorseries adaptadorCoches=new Adaptadorseries(this,
                 Lista_serie);
         Lvseries.setAdapter(adaptadorCoches);
+
+        Lvseries.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Serie r =((Serie)parent.getItemAtPosition(position));
+               Intent i=new Intent(getApplicationContext(),finalactivity.class);
+               i.putExtra(EXTRA_SERIES, r);
+               startActivity(i);
+            }
+        });
+
+
     }
 
 

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.didact.ejercicioserieslistview.finalactivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:id="@+id/tvfinalnombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textSize="35dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="60dp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvfinalgenero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tvfinaltemporadas"
+            android:layout_alignBottom="@+id/tvfinaltemporadas"
+            android:layout_marginLeft="78dp"
+            android:layout_marginStart="78dp"
+            android:layout_toEndOf="@+id/tvfinaltemporadas"
+            android:layout_toRightOf="@+id/tvfinaltemporadas"
+            android:text="TextView"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/tvfinalanio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvfinalcapitulos"
+            android:layout_alignStart="@+id/tvfinalcapitulos"
+            android:layout_below="@+id/tvfinalcapitulos"
+            android:layout_marginTop="42dp"
+            android:text="TextView"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/tvfinalcapitulos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvfinaltemporadas"
+            android:layout_alignStart="@+id/tvfinaltemporadas"
+            android:layout_below="@+id/tvfinaltemporadas"
+            android:layout_marginTop="27dp"
+            android:text="TextView"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/tvfinaltemporadas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView13"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="33dp"
+            android:layout_toEndOf="@+id/textView13"
+            android:layout_toRightOf="@+id/textView1"
+            android:text="TextView"
+            android:textSize="25dp"
+            tools:ignore="UnknownId" />
+
+        <TextView
+            android:id="@+id/tvfinalresumen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tvfinalcapitulos"
+            android:layout_alignBottom="@+id/tvfinalcapitulos"
+            android:layout_alignLeft="@+id/tvfinalgenero"
+            android:layout_alignStart="@+id/tvfinalgenero"
+            android:text="TextView"
+            android:textSize="25dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

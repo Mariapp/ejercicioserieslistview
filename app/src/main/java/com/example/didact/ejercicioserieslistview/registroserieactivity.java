@@ -58,10 +58,10 @@ public class registroserieactivity extends AppCompatActivity {
 
         }else{
 
-            Serie r = new Serie(nombre,temporada,capitulos,año,id+"",resumen);
+                 //Serie r = new Serie(nombre,temporada,capitulos,año,id+"",resumen);
 
             Intent i=new Intent(getApplicationContext(),listaseriesactivity.class);
-            i.putExtra(EXTRA_SERIES, r);
+                 //i.putExtra(EXTRA_SERIES, r);
             startActivity(i);
 
 
