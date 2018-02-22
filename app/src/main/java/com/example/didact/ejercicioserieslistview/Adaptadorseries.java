@@ -43,7 +43,7 @@ public class Adaptadorseries extends ArrayAdapter<Serie> {
         tvaño.setText(series.get(position).getAño() );
 
         TextView resumen = (TextView)
-                item.findViewById(R.id.resumen);
+                item.findViewById(R.id.tvresumen);
         resumen.setText(series.get(position).getResumen() );
 
 

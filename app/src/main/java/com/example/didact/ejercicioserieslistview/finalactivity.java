@@ -35,12 +35,14 @@ public class finalactivity extends AppCompatActivity {
             String resumen = r.getResumen();
 
 
-            tvfinalnombre.setText(nombre);
-            tvfinalgenero.setText(genero);
-            tvfinalanio.setText(año);
-            tvfinalcapitulos.setText(capitulos);
-            tvfinaltemporadas.setText(temporadas);
-            tvfinalresumen.setText(resumen);
+            tvfinalnombre.setText("Serie "+nombre);
+            tvfinalgenero.setText("Género "+genero);
+            tvfinalanio.setText("Año "+año);
+            tvfinalcapitulos.setText("Capítulos x"+capitulos);
+            tvfinaltemporadas.setText("Temporadas "+temporadas);
+            tvfinalresumen.setText("Resumen "+resumen);
+
+
 
 
         }

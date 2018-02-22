@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +20,8 @@ public class listaseriesactivity extends AppCompatActivity {
 
     ListView Lvseries;
     ArrayList<Serie> Lista_serie = new ArrayList<Serie>();
-    TextView tvnombre, tvtemporadas,resumen, tvaño, tvcapitulos;
+    TextView tvnombre, tvtemporadas,tvresumen, tvaño, tvcapitulos;
+
 
 
     @Override
@@ -29,9 +31,11 @@ public class listaseriesactivity extends AppCompatActivity {
 
         tvnombre=(TextView)findViewById(R.id.tvnombre);
         tvtemporadas=(TextView)findViewById(R.id.tvtemporadas);
-        resumen=(TextView)findViewById(R.id.resumen);
+        tvresumen=(TextView)findViewById(R.id.tvresumen);
         tvaño=(TextView)findViewById(R.id.tvaño);
         tvcapitulos=(TextView)findViewById(R.id.tvcapitulos);
+
+
 
 
 
@@ -45,14 +49,19 @@ public class listaseriesactivity extends AppCompatActivity {
             String temporadas = r.getTemporadas();
             String capitulos = r.getCapitulos();
             String año = r.getAño();
+            String resumen=r.getResumen();
 
 
 
 
-            tvnombre.setText(nombre);
-            tvtemporadas.setText(temporadas);
-            tvaño.setText(año);
-            tvcapitulos.setText(capitulos);
+
+
+            tvnombre.setText("Serie"+nombre);
+            tvtemporadas.setText("Temporadas"+temporadas);
+            tvaño.setText("Año"+año);
+            tvcapitulos.setText("Capítulos"+capitulos);
+            tvresumen.setText("Resumen"+resumen);
+
 
         }
 
@@ -64,6 +73,19 @@ public class listaseriesactivity extends AppCompatActivity {
         Adaptadorseries adaptadorCoches=new Adaptadorseries(this,
                 Lista_serie);
         Lvseries.setAdapter(adaptadorCoches);
+
+
+        if(Lista_serie.get(position).getGenero().equals("Familiar")){
+            ImageView imggenero = (ImageView)item.findViewById(R.id.imggenero);
+            imggenero.setImageResource(R.drawable.familiar);
+        }else if(Lista_serie.get(position).getGenero().equals("Acción")){
+            ImageView imggenero = (ImageView)item.findViewById(R.id.imggenero);
+            imggenero.setImageResource(R.id.accion);
+        }
+
+
+
+
 
         Lvseries.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -86,11 +108,11 @@ public class listaseriesactivity extends AppCompatActivity {
 
     private void cargarDatos(){
         Lista_serie.add(new Serie("The Tudors","4","x10","2005","accion",""));
-        Lista_serie.add(new Serie("The Tudors","4","x10","2005","amor",""));
-        Lista_serie.add(new Serie("lkasdñalksd","4","15","2005","familia",""));
-        Lista_serie.add(new Serie("The zxczxczxc","4","x10","2005","accion",""));
-        Lista_serie.add(new Serie("The Tudors","4","x10","2005","terror",""));
-        Lista_serie.add(new Serie("The Tudors","4","x10","2005","accion",""));
+        Lista_serie.add(new Serie("The Simpsons","4","x10","2005","amor",""));
+        Lista_serie.add(new Serie("Los Borgia","4","15","2005","familia",""));
+        Lista_serie.add(new Serie("Sons of Anarchy","4","x10","2005","accion",""));
+        Lista_serie.add(new Serie("Vikings","4","x10","2005","terror",""));
+        Lista_serie.add(new Serie("Shameless","4","x10","2005","accion",""));
         Lista_serie.add(new Serie("The Tudors","4","x10","2005","accion",""));
         Lista_serie.add(new Serie("The Tudors","4","x10","2005","accion",""));
         Lista_serie.add(new Serie("The Tudors","4","x10","2005","accion",""));

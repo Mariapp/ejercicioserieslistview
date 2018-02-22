@@ -5,18 +5,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class registroserieactivity extends AppCompatActivity {
 
+
+
     static final String EXTRA_SERIES = "Series";
-
-
 
 
     EditText etnombre,ettemporada,etcapitulos,etanio,etresumen;
     RadioGroup radiogenero;
+    RadioButton radioamor,radioterror,radiohumor,radioaventura,radiofamiliar,radioaccion;
+
 
 
     @Override
@@ -31,6 +34,13 @@ public class registroserieactivity extends AppCompatActivity {
         etresumen=(EditText)findViewById(R.id.etresumen);
 
         radiogenero=(RadioGroup) findViewById(R.id.radiogenero);
+
+        radioamor=(RadioButton)findViewById(R.id.radioamor);
+        radioterror=(RadioButton)findViewById(R.id.radioterror);
+        radiohumor=(RadioButton)findViewById(R.id.radiohumor);
+        radioaventura=(RadioButton)findViewById(R.id.radioaventura);
+        radiofamiliar=(RadioButton)findViewById(R.id.radiofamiliar);
+        radioaccion=(RadioButton)findViewById(R.id.radioaccion);
 
 
 
@@ -50,18 +60,19 @@ public class registroserieactivity extends AppCompatActivity {
 
 
 
-        if (nombre.equals("") || temporada.equals("") || capitulos.equals("") || año.equals("")) {
-            //|| id==-1
+        if (nombre.equals("") || temporada.equals("") || capitulos.equals("") || año.equals("")
+                || id==-1) {
+
             Toast.makeText(getApplicationContext(),
                     "Por favor, rellena todos los campos", Toast.LENGTH_LONG).show();
 
 
         }else{
 
-                 //Serie r = new Serie(nombre,temporada,capitulos,año,id+"",resumen);
+            Serie r = new Serie(nombre,temporada,capitulos,año,id+"",resumen);
 
             Intent i=new Intent(getApplicationContext(),listaseriesactivity.class);
-                 //i.putExtra(EXTRA_SERIES, r);
+            i.putExtra(EXTRA_SERIES,r);
             startActivity(i);
 
 
@@ -81,7 +92,8 @@ public class registroserieactivity extends AppCompatActivity {
             etcapitulos.setText("");
             etanio.setText("");
             etresumen.setText("");
-            radiogenero.setSelected(false);
+
+            //int.setSelected(id==-1);
 
 
 
